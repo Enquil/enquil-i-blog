@@ -1,1 +1,1 @@
-web: gunicorn.enquil-codestar.wsgi
+web: gunicorn.codestar.wsgi
