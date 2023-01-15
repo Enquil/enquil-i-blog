@@ -34,18 +34,27 @@ ALLOWED_HOSTS = ['enquil-codestar.herokuapp.com', 'localhost']
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [  # adds allauth, cloudinary, summernote and the 'blog' app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
     'blog',
 ]
+
+SITE_ID = 1  # Lets django handle multiple sites from one database
+
+LOGIN_REDIRECT_URL = '/'  # Redirects to home page after login
+LOGOUT_REDIRECT_URL = '/'  # Same as for login redirect above
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
