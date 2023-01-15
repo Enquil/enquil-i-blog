@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['enquil-codestar.herokuapp.com', 'localhost']
 
 # Application definition
 
-INSTALLED_APPS = [  # adds allauth, cloudinary, summernote and the 'blog' app
+INSTALLED_APPS = [  # adds allauth, cloudinary, summernote, crispy forms and the 'blog' app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,6 +57,7 @@ SITE_ID = 1  # Lets django handle multiple sites from one database
 LOGIN_REDIRECT_URL = '/'  # Redirects to home page after login
 LOGOUT_REDIRECT_URL = '/'  # Same as for login redirect above
 
+# Tells crispy forms what template to use
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
@@ -87,6 +88,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'codestar.wsgi.application'
 
 
@@ -100,6 +102,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #     }
 # }
 
+# Set database to the database defined in heroku vars
 DATABASES = {
     'default':
         dj_database_url.parse(os.environ.get('DATABASE_URL'))
