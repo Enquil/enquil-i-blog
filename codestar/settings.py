@@ -48,6 +48,7 @@ INSTALLED_APPS = [  # adds allauth, cloudinary, summernote and the 'blog' app
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'blog',
 ]
 
@@ -55,6 +56,8 @@ SITE_ID = 1  # Lets django handle multiple sites from one database
 
 LOGIN_REDIRECT_URL = '/'  # Redirects to home page after login
 LOGOUT_REDIRECT_URL = '/'  # Same as for login redirect above
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
